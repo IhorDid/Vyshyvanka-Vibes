@@ -10,79 +10,97 @@
     <link rel="shortcut icon" href="data:image/png;base64,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" type="image/png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vyshyvanka-Vibes</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
     <script type="module" crossorigin src="/Vyshyvanka-Vibes/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/Vyshyvanka-Vibes/assets/index-13f3133f.css">
+    <link rel="stylesheet" href="/Vyshyvanka-Vibes/assets/index-6fbe2a0a.css">
   </head>
-  <body>
-    <header>
-  <img src="/Vyshyvanka-Vibes/assets/logo-bca1e19d.svg" alt="Logo" width="44" height="39" />
-  <nav>
-    <ul>
-      <li>
-        <a href="#about"> About us </a>
+  <body class="theme`">
+    <header class="header">
+  <div class="container header-container">
+    <nav class="nav">
+      <a class="nav-logo" href="../index.html "
+        ><img src="/Vyshyvanka-Vibes/assets/logo-bca1e19d.svg" alt="Logo" width="44" height="39"
+      /></a>
+      <ul class="nav-list">
+        <li class="list-item">
+          <a href="#about"> About us </a>
+        </li>
+        <li class="list-item">
+          <a href="#collection"> Our collection </a>
+        </li>
+        <li class="list-item">
+          <a href="#order"> CUSTOMER ORDER </a>
+        </li>
+        <li class="list-item">
+          <a href="#testimonials"> TEstimonials </a>
+        </li>
+      </ul>
+    </nav>
+    <button class="btn-theme" aria-checked="true"></button>
+    <address class="address">
+      <a href="tel:+380684439426">+380 (68) 443-94-26</a>
+    </address>
+    <ul class="social">
+      <li class="social-link">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Facebook site"
+        >
+          <img
+            src="../img/icons/facebook.svg"
+            alt="facebook"
+            width="40"
+            height="40"
+          />
+        </a>
       </li>
-      <li>
-        <a href="#collection"> Our collection </a>
+      <li class="social-link">
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Instagram site"
+        >
+          <img
+            src="../img/icons/instagram.svg"
+            alt="instagram"
+            width="40"
+            height="40"
+          />
+        </a>
       </li>
-      <li>
-        <a href="#order"> CUSTOMER ORDER </a>
-      </li>
-      <li>
-        <a href="#testimonials"> TEstimonials </a>
+      <li class="social-link">
+        <a
+          href="https://youtube.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Youtube site"
+        >
+          <img
+            src="../img/icons/youtube.svg"
+            alt="youtube"
+            width="40"
+            height="40"
+          />
+        </a>
       </li>
     </ul>
-  </nav>
-  <address>
-    <a href="tel:+380684439426">+380 (68) 443-94-26</a>
-  </address>
-  <ul>
-    <li>
-      <a
-        href="https://facebook.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Facebook site"
-      >
-        <img
-          src="../img/icons/facebook.svg"
-          alt="facebook"
-          width="40"
-          height="40"
-        />
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://instagram.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram site"
-      >
-        <img
-          src="../img/icons/instagram.svg"
-          alt="instagram"
-          width="40"
-          height="40"
-        />
-      </a>
-    </li>
-    <li>
-      <a
-        href="https://youtube.com"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Youtube site"
-      >
-        <img
-          src="../img/icons/youtube.svg"
-          alt="youtube"
-          width="40"
-          height="40"
-        />
-      </a>
-    </li>
-  </ul>
+  </div>
 </header>
 
     <section>
