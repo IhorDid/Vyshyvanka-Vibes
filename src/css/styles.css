@@ -15,9 +15,10 @@
 @import url('./footer.css');
 
 .container {
-  width: 1280px;
+  width: 1180px;
   padding-left: 50px;
   padding-right: 50px;
+  margin: 0 auto;
 }
 .theme {
   background-color: #fff;
