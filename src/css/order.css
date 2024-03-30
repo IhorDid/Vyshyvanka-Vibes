@@ -52,15 +52,27 @@
   height: 40px;
   justify-content: center;
   align-items: center;
-  color: #fcf9f9;
+  color: #1d1c1c;
+  border-radius: 8px;
+  border: 1px solid rgba(252, 249, 249, 0.1);
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: rgba(207, 207, 207, 1);
+}
+.timer_btn:enabled {
+  display: inline-flex;
+  padding: 8px 16px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: rgba(152, 152, 152, 1);
   border-radius: 8px;
   border: 1px solid rgba(252, 249, 249, 0.1);
   background-color: rgba(252, 249, 249, 0.1);
   transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-.timer_btn:hover,
-.timer_btn:focus {
+.timer_btn:enabled:hover,
+.timer_btn:enabled:focus {
   border-color: #ecd979;
   background-color: transparent;
 }
