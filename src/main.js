@@ -7,65 +7,24 @@ function onThemeClick() {
 }
 
 // timer-order section
-// Описаний в документації
-import flatpickr from 'flatpickr';
-// Додатковий імпорт стилів
-import 'flatpickr/dist/flatpickr.min.css';
-
-// Описаний у документації
-import iziToast from 'izitoast';
-// Додатковий імпорт стилів
-import 'izitoast/dist/css/iziToast.min.css';
-
-let userSelectedDate;
-
-const inputEl = document.querySelector('.timer-input');
-const btnEl = document.querySelector('.timer_btn');
-
+let intervalId = null;
 const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
 const minutesEl = document.querySelector('[data-minutes]');
 const secondsEl = document.querySelector('[data-seconds]');
 
-btnEl.addEventListener('click', onBtnClick);
-
-flatpickr(inputEl, {
-  enableTime: true,
-  dateFormat: 'Y-m-d H:i',
-  time_24hr: true,
-  defaultDate: new Date(),
-  minuteIncrement: 1,
-  onClose(selectedDates) {
-    userSelectedDate = selectedDates[0];
-    const currentDate = new Date();
-    if (userSelectedDate > currentDate) {
-      btnEl.disabled = false;
-    } else {
-      btnEl.disabled = true;
-      iziToast.show({
-        position: 'topCenter',
-        backgroundColor: '#ff4d4d',
-        title: 'Error',
-        message: 'Please choose a date in the future',
-      });
-    }
-  },
-});
-clearInterval;
-function onBtnClick() {
-  startTimer();
-  btnEl.disabled = true;
-  inputEl.disabled = true;
-}
-
 function startTimer() {
-  setInterval(updateTimer, 1000);
+  intervalId = setInterval(updateTimer, 1000);
 }
 
 function updateTimer() {
+  const userSelectedDate = new Date(2024, 3, 31, 2, 49, 0);
   const currentDate = new Date();
   const differenceTime = userSelectedDate - currentDate;
-
+  if (differenceTime <= 0) {
+    clearInterval(intervalId);
+    return;
+  }
   const { days, hours, minutes, seconds } = convertMs(differenceTime);
   daysEl.textContent = addLeadingZero(days);
   minutesEl.textContent = addLeadingZero(minutes);
@@ -95,3 +54,5 @@ function convertMs(ms) {
 function addLeadingZero(value) {
   return String(value).padStart(2, '0');
 }
+
+startTimer();
