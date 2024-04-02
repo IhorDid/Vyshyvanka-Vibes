@@ -15,7 +15,7 @@
 @import url('./footer.css');
 
 .container {
-  width: 1180px;
+  width: 1280px;
   padding-left: 50px;
   padding-right: 50px;
   margin: 0 auto;
@@ -24,3 +24,5 @@
   background-color: #fff;
   color: black;
 }
+
+/* rgba(236, 217, 121, 1); */

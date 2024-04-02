@@ -14,7 +14,7 @@
   font-size: 44px;
   width: 459px;
   font-weight: 400;
-  line-height: 58px; /* 131.818% */
+  line-height: 1.32;
   letter-spacing: -1.32px;
 }
 
@@ -92,12 +92,12 @@
 }
 .field-value {
   font-size: 40px;
-  line-height: 48px; /* 120% */
-  letter-spacing: 1.6px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
 }
 .field-label {
   font-size: 22px;
-  line-height: 24px; /* 150% */
+  line-height: 1.5;
 }
 .order-right {
   width: 508px;
