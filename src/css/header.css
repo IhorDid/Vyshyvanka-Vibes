@@ -31,7 +31,7 @@
   color: rgba(236, 217, 121, 1);
 }
 .address {
-  margin-right: 20px;
+  /* margin-right: 20px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,6 +55,7 @@
 }
 
 .social {
+  margin-left: auto;
   display: flex;
   gap: 12px;
   align-items: center;
