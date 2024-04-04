@@ -1,0 +1,31 @@
+#about {
+  padding-top: 75px;
+  padding-bottom: 75px;
+  background-image: url(../img/about/back.png);
+  background-repeat: no-repeat;
+  background-position: left calc(50% + 500px) top 216px;
+}
+
+.about_container {
+  display: flex;
+  justify-content: space-between;
+}
+.about_us {
+  margin-top: auto;
+  margin-bottom: auto;
+  border-radius: 4px;
+}
+.about_title {
+  margin-bottom: 40px;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.46;
+  letter-spacing: -0.04em;
+}
+.about_text {
+  width: 536px;
+  color: rgba(252, 249, 249, 0.4);
+  line-height: normal;
+  letter-spacing: -0.04em;
+  margin-bottom: 20px;
+}

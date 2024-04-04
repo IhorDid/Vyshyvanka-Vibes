@@ -1,0 +1,50 @@
+:root {
+  --indent-vertical: 20px;
+  --indent-horizontal: 40px;
+  --items: 3;
+}
+
+#collection {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.collection_title {
+  margin-bottom: 40px;
+  text-align: center;
+  font-size: 44px;
+  font-weight: 500;
+  line-height: 1.46;
+  letter-spacing: -0.03em;
+}
+.collection_list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px 20px;
+}
+
+.collection_item {
+  width: calc(
+    (100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items)
+  );
+}
+
+.collection_item img {
+  margin-bottom: 18px;
+  border-radius: 4px;
+}
+.item_title {
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.item_text {
+  color: rgba(252, 249, 249, 0.4);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.05em;
+}
