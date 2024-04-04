@@ -1,0 +1,18 @@
+#footer {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  border-top: 1px solid rgba(252, 249, 249, 0.1);
+  background-image: url(../img/footer/back.png);
+  background-repeat: no-repeat;
+  background-position: left calc(50% + 550px) top 0;
+}
+.footer_offer {
+  width: 754px;
+  margin-top: 117px;
+  font-size: 64px;
+  line-height: 1.16;
+  letter-spacing: -0.03em;
+}
+.footer_offer_current {
+  color: rgba(236, 217, 121, 1);
+}
