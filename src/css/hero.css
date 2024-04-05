@@ -37,11 +37,17 @@
   border-radius: 15px;
   border: 1px solid rgba(252, 249, 249, 0.1);
   background-color: transparent;
+  transition: all 0.3s ease-in;
 }
 
 .offer_btn:hover,
 .offer_btn:focus {
   border: 1px solid #ecd979;
+}
+
+.offer_btn_svg {
+  margin-left: 10px;
+  fill: #ecd979;
 }
 .emblem {
   display: flex;
@@ -50,6 +56,13 @@
   margin-top: 66px;
   margin-left: 113px;
   width: 150px;
+}
+
+.emblem_svg {
+  fill: #ecd979;
+}
+.emblem_svg:hover {
+  fill: #fff200;
 }
 
 .emblem_text {
