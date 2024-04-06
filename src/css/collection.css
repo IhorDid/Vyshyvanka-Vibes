@@ -32,6 +32,10 @@
   width: calc(
     (100% - var(--indent-vertical) * (var(--items) - 1)) / var(--items)
   );
+  transition: transform 300ms easeу;
+}
+.collection_item:hover {
+  transform: translateY(-10px);
 }
 
 .collection_item img {

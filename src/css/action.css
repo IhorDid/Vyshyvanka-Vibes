@@ -1,0 +1,108 @@
+#action {
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.order-left {
+}
+.order-title {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 44px;
+  text-align: center;
+  font-size: 44px;
+  width: 700px;
+  font-weight: 400;
+  line-height: 1.32;
+  letter-spacing: -1.32px;
+}
+
+.current-color {
+  display: inline;
+  color: #ecd979;
+  font-weight: 500;
+}
+
+.order-action {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 36px;
+}
+
+.timer-input {
+  width: 272px;
+  padding: 8px 0 8px 16px;
+  margin-right: 8px;
+  font-size: 16px;
+  line-height: 22px;
+  border-radius: 4px;
+  color: #fcf9f9;
+  border: 1px solid #808080;
+  background: transparent;
+  transition: border-color 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.timer-input:hover,
+.timer-input:focus {
+  border-color: #fcf9f9;
+}
+.timer_btn {
+  display: inline-flex;
+  padding: 8px 16px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #1d1c1c;
+  border-radius: 8px;
+  border: 1px solid rgba(252, 249, 249, 0.1);
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: rgba(207, 207, 207, 1);
+}
+.timer_btn:enabled {
+  display: inline-flex;
+  padding: 8px 16px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: rgba(152, 152, 152, 1);
+  border-radius: 8px;
+  border: 1px solid rgba(252, 249, 249, 0.1);
+  background-color: rgba(252, 249, 249, 0.1);
+  transition: all 0.7s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.timer_btn:enabled:hover,
+.timer_btn:enabled:focus {
+  border-color: #ecd979;
+  background-color: transparent;
+}
+
+.timer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 32px;
+}
+.field {
+  display: flex;
+  gap: 6px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.field-value {
+  font-size: 60px;
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+.field-label {
+  font-size: 24px;
+  line-height: 1.5;
+}
+.order-right {
+  width: 508px;
+  height: 335px;
+  margin-top: 153px;
+  background-color: #fff;
+  border: 1px solid red;
+}
