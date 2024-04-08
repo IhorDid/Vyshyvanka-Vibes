@@ -23,7 +23,9 @@
     />
     
     <script type="module" crossorigin src="/Vyshyvanka-Vibes/commonHelpers.js"></script>
-    <link rel="stylesheet" href="/Vyshyvanka-Vibes/assets/index-c106e934.css">
+    <link rel="modulepreload" crossorigin href="/Vyshyvanka-Vibes/assets/vendor-8c59ed88.js">
+    <link rel="stylesheet" href="/Vyshyvanka-Vibes/assets/vendor-1cd1f9d9.css">
+    <link rel="stylesheet" href="/Vyshyvanka-Vibes/assets/index-bd4e41d8.css">
   </head>
   <body class="theme`">
     <header class="header">
@@ -113,14 +115,14 @@
       <button class="offer_btn" type="button">
         Order
         <svg class="offer_btn_svg" width="27" height="17">
-          <use href="/Vyshyvanka-Vibes/assets/sprite-1204fa48.svg#icon-arrow"></use>
+          <use href="/Vyshyvanka-Vibes/assets/sprite-53e6abb8.svg#icon-arrow"></use>
         </svg>
       </button>
     </div>
 
     <div class="emblem">
       <svg class="emblem_svg" width="52" height="51">
-        <use href="/Vyshyvanka-Vibes/assets/sprite-1204fa48.svg#icon-star-sun"></use>
+        <use href="/Vyshyvanka-Vibes/assets/sprite-53e6abb8.svg#icon-star-sun"></use>
       </svg>
       <p class="emblem_text">all embroidery is made by hand</p>
     </div>
@@ -286,7 +288,25 @@
     <section id="present">
   <div class="container">
     <h2 class="visually-hidden"></h2>
-    <img src="/Vyshyvanka-Vibes/assets/Image-79da1d4b.jpg" alt="women in green dress" />
+    <form id="present_form">
+      <div class="svg_wrapper">
+        <input
+          name="fieldSearch"
+          class="present_input"
+          type="text"
+          id="inputField"
+          placeholder="Search images..."
+          required
+        />
+        <svg class="presnt_svg" width="18" height="18">
+          <use href="../img/sprite.svg#icon-form-search"></use>
+        </svg>
+      </div>
+      <button class="present_btn" type="submit">Search</button>
+    </form>
+
+    <ul class="gallery"></ul>
+    <span class="loader"></span>
   </div>
 </section>
 
@@ -334,7 +354,7 @@
         <button class="offer_btn btn_current">
           Send
           <svg class="offer_btn_svg" width="27" height="17">
-            <use href="/Vyshyvanka-Vibes/assets/sprite-1204fa48.svg#icon-arrow"></use>
+            <use href="/Vyshyvanka-Vibes/assets/sprite-53e6abb8.svg#icon-arrow"></use>
           </svg>
         </button>
       </form>
