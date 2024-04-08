@@ -60,6 +60,7 @@
 
 .emblem_svg {
   fill: #ecd979;
+  transition: fill 300ms ease;
 }
 .emblem_svg:hover {
   fill: #fff200;

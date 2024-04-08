@@ -1,6 +1,24 @@
 <section id="present">
   <div class="container">
     <h2 class="visually-hidden"></h2>
-    <img src="./img/present/Image.jpg" alt="women in green dress" />
+    <form id="present_form">
+      <div class="svg_wrapper">
+        <input
+          name="fieldSearch"
+          class="present_input"
+          type="text"
+          id="inputField"
+          placeholder="Search images..."
+          required
+        />
+        <svg class="presnt_svg" width="18" height="18">
+          <use href="../img/sprite.svg#icon-form-search"></use>
+        </svg>
+      </div>
+      <button class="present_btn" type="submit">Search</button>
+    </form>
+
+    <ul class="gallery"></ul>
+    <span class="loader"></span>
   </div>
 </section>
