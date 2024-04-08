@@ -56,3 +56,5 @@ function addLeadingZero(value) {
 }
 
 startTimer();
+
+fetch('https://rickandmortyapi.com/api/character');
