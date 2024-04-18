@@ -84,10 +84,8 @@
   margin-top: 16px;
   padding: 0 16px 16px 16px;
   display: flex;
+  justify-content: center;
   gap: 40px;
-}
-.current {
-  margin-left: auto;
 }
 
 .gallery_item_params_link {
@@ -96,6 +94,10 @@
   align-items: center;
   gap: 10px;
   transition: all 300ms ease-in-out;
+}
+.current {
+  margin-left: 30px;
+  flex-direction: row;
 }
 
 .gallery_svg {
@@ -164,4 +166,12 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.favorite_svg {
+  overflow: hidden;
+  fill: rgba(252, 249, 249, 0.718);
+}
+
+.active_svg {
+  fill: rgba(239, 225, 35, 0.804);
 }

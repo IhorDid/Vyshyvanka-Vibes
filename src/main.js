@@ -70,9 +70,13 @@ const elements = {
   list: document.querySelector('.gallery'),
   loader: document.querySelector('.loader'),
 };
+let searchInput;
+let dataArr;
+const arrImg = [];
 
 hideLoader();
 elements.searcForm.addEventListener('submit', onSearchForm);
+elements.list.addEventListener('click', onFavoriteClick);
 
 function hideLoader() {
   elements.loader.style.display = 'none';
@@ -81,14 +85,14 @@ function hideLoader() {
 function showLoader() {
   elements.loader.style.display = 'block';
 }
-
 function onSearchForm(e) {
   e.preventDefault();
-  const searchInput = e.currentTarget.elements.fieldSearch;
+  searchInput = e.currentTarget.elements.fieldSearch;
   showLoader();
   setTimeout(() => {
     servicePixabay(searchInput.value)
       .then(data => {
+        dataArr = data;
         if (!data.hits.length) {
           iziToast.show({
             title: 'Error',
@@ -137,8 +141,8 @@ function servicePixabay(word) {
 function createMarkup(arr) {
   return arr
     .map(
-      ({ downloads, views, likes, webformatURL, tags, largeImageURL }) =>
-        `<li class="gallery_item">
+      ({ id, downloads, views, likes, webformatURL, tags, largeImageURL }) =>
+        `<li data-id="${id}" class="gallery_item">
         <a class="gallery_link" href="${largeImageURL}">
           <img class="gallery_img" src="${webformatURL}" data-sourse="${largeImageURL}" alt="${tags}" />
         </a>
@@ -155,15 +159,65 @@ function createMarkup(arr) {
             </svg>
             ${likes}
           </li>
-          <li class="gallery_item_params_link current">
+          <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="../img/sprite.svg#icon-search"></use>
             </svg>
             ${views}
           </li>
+          <li class="gallery_item_params_link current">
+           <svg width="40" height="40">
+          <use class="favorite_svg"  href="../img/sprite.svg#icon-star-solid"></use>
+        </svg>
+        </li>
           </ul>
+          
           </li>
           `
     )
     .join('');
+}
+
+// function onFavoriteClick(evt) {
+//   const currentImgs = evt.target.closest('.gallery_item');
+//   const currentId = Number(currentImgs.dataset.id);
+
+//   if (evt.target.classList.contains('favorite_svg')) {
+//     evt.target.classList.add('active_svg');
+
+//     const currentImg = dataArr.hits.find(hit => currentId === hit.id);
+//     console.log(currentImg);
+//     arrImg.push(currentImg);
+//     localStorage.setItem('LS', JSON.stringify(arrImg));
+//   }
+
+//   if (evt.target.classList.contains('active_svg')) {
+//     evt.target.classList.remove('active_svg');
+//     localStorage.removeItem('LS');
+//   }
+// }
+
+function onFavoriteClick(evt) {
+  const currentImgs = evt.target.closest('.gallery_item');
+  const currentId = Number(currentImgs.dataset.id);
+
+  if (evt.target.classList.contains('favorite_svg')) {
+    if (evt.target.classList.contains('active_svg')) {
+      evt.target.classList.remove('active_svg');
+      // Отримання поточного масиву об'єктів з localStorage
+      const storedData = JSON.parse(localStorage.getItem('LS')) || [];
+      // Фільтрація масиву, щоб залишити тільки ті об'єкти, які не відповідають поточному Id
+      const updatedData = storedData.filter(obj => obj.id !== currentId);
+      // Збереження оновленого масиву в localStorage
+      localStorage.setItem('LS', JSON.stringify(updatedData));
+    } else {
+      evt.target.classList.add('active_svg');
+      // Отримання об'єкта, який відповідає поточному Id
+      const currentImg = dataArr.hits.find(hit => currentId === hit.id);
+      // Додавання об'єкта до масиву
+      arrImg.push(currentImg);
+      // Збереження масиву в localStorage
+      localStorage.setItem('LS', JSON.stringify(arrImg));
+    }
+  }
 }
