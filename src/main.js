@@ -3,7 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-
+import common from './localStorage.json';
 // body
 const bodyEl = document.querySelector('body');
 const themeEl = document.querySelector('.btn-theme');
@@ -178,46 +178,20 @@ function createMarkup(arr) {
     .join('');
 }
 
-// function onFavoriteClick(evt) {
-//   const currentImgs = evt.target.closest('.gallery_item');
-//   const currentId = Number(currentImgs.dataset.id);
-
-//   if (evt.target.classList.contains('favorite_svg')) {
-//     evt.target.classList.add('active_svg');
-
-//     const currentImg = dataArr.hits.find(hit => currentId === hit.id);
-//     console.log(currentImg);
-//     arrImg.push(currentImg);
-//     localStorage.setItem('LS', JSON.stringify(arrImg));
-//   }
-
-//   if (evt.target.classList.contains('active_svg')) {
-//     evt.target.classList.remove('active_svg');
-//     localStorage.removeItem('LS');
-//   }
-// }
-
 function onFavoriteClick(evt) {
   const currentImgs = evt.target.closest('.gallery_item');
   const currentId = Number(currentImgs.dataset.id);
 
   if (evt.target.classList.contains('favorite_svg')) {
-    if (evt.target.classList.contains('active_svg')) {
-      evt.target.classList.remove('active_svg');
-      // Отримання поточного масиву об'єктів з localStorage
-      const storedData = JSON.parse(localStorage.getItem('LS')) || [];
-      // Фільтрація масиву, щоб залишити тільки ті об'єкти, які не відповідають поточному Id
-      const updatedData = storedData.filter(obj => obj.id !== currentId);
-      // Збереження оновленого масиву в localStorage
-      localStorage.setItem('LS', JSON.stringify(updatedData));
+    evt.target.classList.toggle('active_svg');
+
+    const index = arrImg.findIndex(arr => arr.id === currentId);
+    if (index !== -1) {
+      arrImg.splice(index, 1);
     } else {
-      evt.target.classList.add('active_svg');
-      // Отримання об'єкта, який відповідає поточному Id
       const currentImg = dataArr.hits.find(hit => currentId === hit.id);
-      // Додавання об'єкта до масиву
       arrImg.push(currentImg);
-      // Збереження масиву в localStorage
-      localStorage.setItem('LS', JSON.stringify(arrImg));
     }
+    localStorage.setItem(common.LS, JSON.stringify(arrImg));
   }
 }
