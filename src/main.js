@@ -72,11 +72,18 @@ const elements = {
 };
 let searchInput;
 let dataArr;
-const arrImg = [];
-
+const arrStorage = JSON.parse(localStorage.getItem(common.FS)) ?? [];
+const arrImg = JSON.parse(localStorage.getItem(common.LS)) ?? [];
+document.addEventListener('DOMContentLoaded', onStorageLoader);
 hideLoader();
 elements.searcForm.addEventListener('submit', onSearchForm);
 elements.list.addEventListener('click', onFavoriteClick);
+function onStorageLoader() {
+  if (arrImg) {
+    elements.list.insertAdjacentHTML('beforeend', createMarkup(arrStorage));
+  }
+  onFavoriteClick();
+}
 
 function hideLoader() {
   elements.loader.style.display = 'none';
@@ -85,6 +92,7 @@ function hideLoader() {
 function showLoader() {
   elements.loader.style.display = 'block';
 }
+
 function onSearchForm(e) {
   e.preventDefault();
   searchInput = e.currentTarget.elements.fieldSearch;
@@ -104,6 +112,7 @@ function onSearchForm(e) {
             zindex: '10000000',
           });
         }
+        localStorage.setItem(common.FS, JSON.stringify(data.hits));
         elements.list.innerHTML = createMarkup(data.hits);
         const galleryLibrary = new SimpleLightbox('.gallery a', {
           captionDelay: 250,

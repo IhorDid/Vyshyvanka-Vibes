@@ -6,14 +6,85 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="./img/favicon-logo.png" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"
+    />
     <link rel="stylesheet" href="./css/styles.css" />
     <title>Favorite list</title>
   </head>
   <body>
+    <section id="list-header">
+      <div class="container list_container">
+        <nav class="nav">
+          <a class="nav-logo" href="../index.html ">
+            <img src="./img/icons/logo.svg" alt="Logo" width="44" height="39" />
+          </a>
+          <ul class="nav-list">
+            <li class="list-item">
+              <a href="./index.html"> Home </a>
+            </li>
+            <li class="list-item">
+              <button class="btn_clear" type="button">Clear list</button>
+            </li>
+        </nav>
+        <button class="btn-theme" aria-checked="true"></button>
+
+        <address class="address list_address">
+          <a href="tel:+380684439426">+380 (68) 443-94-26</a>
+        </address>
+        <ul class="social list_social">
+          <li class="social-link">
+            <a
+              class="social_link"
+              href="https://facebook.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook site"
+            >
+              <svg class="social_svg" width="28" height="28">
+                <use href="../img/sprite.svg#icon-facebook"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-link">
+            <a
+              class="social_link"
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram site"
+            >
+              <svg class="social_svg" width="28" height="28">
+                <use href="../img/sprite.svg#icon-instagram"></use>
+              </svg>
+            </a>
+          </li>
+          <li class="social-link">
+            <a
+              class="social_link"
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Youtube site"
+            >
+              <svg class="social_svg" width="28" height="28">
+                <use href="../img/sprite.svg#icon-youtube"></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
     <section id="favorite" class="favorite">
       <div class="container">
         <h1 class="favorite_title">Favorite list</h1>
-        <a href="./index.html">Home</a>
         <ul class="favorite_list"></ul>
       </div>
     </section>
