@@ -1,19 +1,19 @@
-import{c as f}from"./assets/localStorage-bac96b72.js";import{i as p,S as v}from"./assets/vendor-0fc460d7.js";const _=document.querySelector("body"),S=document.querySelector(".btn-theme");S.addEventListener("click",L);function L(){_.classList.toggle("theme")}let g=null;const b=document.querySelector("[data-days]"),k=document.querySelector("[data-hours]"),w=document.querySelector("[data-minutes]"),E=document.querySelector("[data-seconds]");function q(){g=setInterval(x,1e3)}function x(){const r=new Date(2024,3,31,2,49,0)-new Date;if(r<=0){clearInterval(g);return}const{days:a,hours:s,minutes:n,seconds:o}=I(r);b.textContent=c(a),w.textContent=c(n),k.textContent=c(s),E.textContent=c(o)}function I(e){const n=Math.floor(e/864e5),o=Math.floor(e%864e5/36e5),l=Math.floor(e%864e5%36e5/6e4),y=Math.floor(e%864e5%36e5%6e4/1e3);return{days:n,hours:o,minutes:l,seconds:y}}function c(e){return String(e).padStart(2,"0")}q();const i={searcForm:document.querySelector("#present_form"),list:document.querySelector(".gallery"),loader:document.querySelector(".loader")};let d,m;const u=[];h();i.searcForm.addEventListener("submit",C);i.list.addEventListener("click",M);function h(){i.loader.style.display="none"}function $(){i.loader.style.display="block"}function C(e){e.preventDefault(),d=e.currentTarget.elements.fieldSearch,$(),setTimeout(()=>{D(d.value).then(t=>{m=t,t.hits.length||p.show({title:"Error",message:"Sorry, there are no images matching your search query. Please try again!",position:"topCenter",backgroundColor:"rgba(252, 249, 249, 1)",messageColor:"#000",zindex:"10000000"}),i.list.innerHTML=T(t.hits),new v(".gallery a",{captionDelay:250,captionsData:"alt"}).refresh()}).catch(t=>console.log(t)).finally(()=>{h(),e.target.reset()})},2e3)}function D(e){const t="https://pixabay.com/api/",r="42170319-af092c1d236dd53a733e41db9",a=new URLSearchParams({key:r,q:e,image_type:"photo",orientation:"horizontal",safesearch:!0});return fetch(`${t}?${a}`).then(s=>{if(!s.ok)throw new Error(s.statusText);return s.json()})}function T(e){return e.map(({id:t,downloads:r,views:a,likes:s,webformatURL:n,tags:o,largeImageURL:l})=>`<li data-id="${t}" class="gallery_item">
-        <a class="gallery_link" href="${l}">
-          <img class="gallery_img" src="${n}" data-sourse="${l}" alt="${o}" />
+import{c as d}from"./assets/localStorage-45ca8791.js";import{i as v,S as _}from"./assets/vendor-0fc460d7.js";const L=document.querySelector("body"),b=document.querySelector(".btn-theme");b.addEventListener("click",k);function k(){L.classList.toggle("theme")}let m=null;const E=document.querySelector("[data-days]"),w=document.querySelector("[data-hours]"),I=document.querySelector("[data-minutes]"),q=document.querySelector("[data-seconds]");function x(){m=setInterval(C,1e3)}function C(){const s=new Date(2024,3,31,2,49,0)-new Date;if(s<=0){clearInterval(m);return}const{days:a,hours:r,minutes:n,seconds:i}=D(s);E.textContent=u(a),I.textContent=u(n),w.textContent=u(r),q.textContent=u(i)}function D(e){const n=Math.floor(e/864e5),i=Math.floor(e%864e5/36e5),c=Math.floor(e%864e5%36e5/6e4),p=Math.floor(e%864e5%36e5%6e4/1e3);return{days:n,hours:i,minutes:c,seconds:p}}function u(e){return String(e).padStart(2,"0")}x();const o={searcForm:document.querySelector("#present_form"),list:document.querySelector(".gallery"),loader:document.querySelector(".loader")};let g,h;const T=JSON.parse(localStorage.getItem(d.FS))??[],l=JSON.parse(localStorage.getItem(d.LS))??[];document.addEventListener("DOMContentLoaded",$);y();o.searcForm.addEventListener("submit",F);o.list.addEventListener("click",S);function $(){l&&o.list.insertAdjacentHTML("beforeend",f(T)),S()}function y(){o.loader.style.display="none"}function M(){o.loader.style.display="block"}function F(e){e.preventDefault(),g=e.currentTarget.elements.fieldSearch,M(),setTimeout(()=>{N(g.value).then(t=>{h=t,t.hits.length||v.show({title:"Error",message:"Sorry, there are no images matching your search query. Please try again!",position:"topCenter",backgroundColor:"rgba(252, 249, 249, 1)",messageColor:"#000",zindex:"10000000"}),localStorage.setItem(d.FS,JSON.stringify(t.hits)),o.list.innerHTML=f(t.hits),new _(".gallery a",{captionDelay:250,captionsData:"alt"}).refresh()}).catch(t=>console.log(t)).finally(()=>{y(),e.target.reset()})},2e3)}function N(e){const t="https://pixabay.com/api/",s="42170319-af092c1d236dd53a733e41db9",a=new URLSearchParams({key:s,q:e,image_type:"photo",orientation:"horizontal",safesearch:!0});return fetch(`${t}?${a}`).then(r=>{if(!r.ok)throw new Error(r.statusText);return r.json()})}function f(e){return e.map(({id:t,downloads:s,views:a,likes:r,webformatURL:n,tags:i,largeImageURL:c})=>`<li data-id="${t}" class="gallery_item">
+        <a class="gallery_link" href="${c}">
+          <img class="gallery_img" src="${n}" data-sourse="${c}" alt="${i}" />
         </a>
         <ul class="gallery_item_params">
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="../img/sprite.svg#icon-downloads"></use>
             </svg>
-            ${r}
+            ${s}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="../img/sprite.svg#icon-heart"></use>
             </svg>
-            ${s}
+            ${r}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
@@ -29,5 +29,5 @@ import{c as f}from"./assets/localStorage-bac96b72.js";import{i as p,S as v}from"
           </ul>
           
           </li>
-          `).join("")}function M(e){const t=e.target.closest(".gallery_item"),r=Number(t.dataset.id);if(e.target.classList.contains("favorite_svg")){e.target.classList.toggle("active_svg");const a=u.findIndex(s=>s.id===r);if(a!==-1)u.splice(a,1);else{const s=m.hits.find(n=>r===n.id);u.push(s)}localStorage.setItem(f.LS,JSON.stringify(u))}}
+          `).join("")}function S(e){const t=e.target.closest(".gallery_item"),s=Number(t.dataset.id);if(e.target.classList.contains("favorite_svg")){e.target.classList.toggle("active_svg");const a=l.findIndex(r=>r.id===s);if(a!==-1)l.splice(a,1);else{const r=h.hits.find(n=>s===n.id);l.push(r)}localStorage.setItem(d.LS,JSON.stringify(l))}}
 //# sourceMappingURL=commonHelpers2.js.map

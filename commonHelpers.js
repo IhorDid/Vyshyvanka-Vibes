@@ -1,33 +1,33 @@
-import{c}from"./assets/localStorage-bac96b72.js";import{S as o}from"./assets/vendor-0fc460d7.js";const m={list:document.querySelector(".favorite_list")},n=JSON.parse(localStorage.getItem(c.LS))??[];function _(e){return e.map(({id:a,downloads:l,views:i,likes:r,webformatURL:t,tags:g,largeImageURL:s})=>`<li data-id="${a}" class="gallery_item">
+import{c as l}from"./assets/localStorage-45ca8791.js";import{S as o}from"./assets/vendor-0fc460d7.js";const a={list:document.querySelector(".favorite_list"),btnClear:document.querySelector(".btn_clear")},m=JSON.parse(localStorage.getItem(l.LS))??[];a.btnClear.addEventListener("click",v);function _(e){return e.map(({id:t,downloads:i,views:r,likes:c,webformatURL:g,tags:n,largeImageURL:s})=>`<li data-id="${t}" class="gallery_item">
         <a class="gallery_link" href="${s}">
-          <img class="gallery_img" src="${t}" data-sourse="${s}" alt="${g}" />
+          <img class="gallery_img" src="${g}" data-sourse="${s}" alt="${n}" />
         </a>
         <ul class="gallery_item_params">
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="../img/sprite.svg#icon-downloads"></use>
             </svg>
-            ${l}
+            ${i}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="../img/sprite.svg#icon-heart"></use>
             </svg>
-            ${r}
+            ${c}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="../img/sprite.svg#icon-search"></use>
             </svg>
-            ${i}
+            ${r}
           </li>
           <li class="gallery_item_params_link current">
            <svg width="40" height="40">
-          <use class="favorite_svg"  href="../img/sprite.svg#icon-star-solid"></use>
+          <use class="favorite_svg"  href="../img/sprite.svg#icon-basket-delete"></use>
         </svg>
         </li>
           </ul>
           
           </li>
-          `).join("")}m.list.insertAdjacentHTML("beforeend",_(n));const h=new o(".favorite_list a",{captionDelay:250,captionsData:"alt"});h.refresh();
+          `).join("")}a.list.insertAdjacentHTML("beforeend",_(m));const h=new o(".favorite_list a",{captionDelay:250,captionsData:"alt"});h.refresh();function v(e){localStorage.removeItem(l.LS),window.location.href="./index.html"}
 //# sourceMappingURL=commonHelpers.js.map
