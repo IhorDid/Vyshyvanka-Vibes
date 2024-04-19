@@ -12,7 +12,7 @@ function onThemeClick() {
   bodyEl.classList.toggle('theme');
 }
 
-// timer-order section
+// #region timer-order section
 let intervalId = null;
 const daysEl = document.querySelector('[data-days]');
 const hoursEl = document.querySelector('[data-hours]');
@@ -62,8 +62,9 @@ function addLeadingZero(value) {
 }
 
 startTimer();
+// #endregion
 
-// pixabay gallery
+// #region  pixabay gallery
 
 const elements = {
   searcForm: document.querySelector('#present_form'),
@@ -204,3 +205,17 @@ function onFavoriteClick(evt) {
     localStorage.setItem(common.LS, JSON.stringify(arrImg));
   }
 }
+//#endregion
+
+const bannerEl = document.querySelector('.banner');
+const textEl = document.querySelector('.banner_text');
+
+let counter = 10;
+
+const id = setInterval(() => {
+  counter -= 1;
+  textEl.textContent = `Залишилося ${counter} секунд`;
+  if (!counter) {
+    bannerEl.style.display = 'none';
+  }
+}, 1000);
