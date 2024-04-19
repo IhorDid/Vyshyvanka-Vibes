@@ -1,4 +1,4 @@
-import{c as l}from"./assets/localStorage-45ca8791.js";import{S as o}from"./assets/vendor-0fc460d7.js";const a={list:document.querySelector(".favorite_list"),btnClear:document.querySelector(".btn_clear")},m=JSON.parse(localStorage.getItem(l.LS))??[];a.btnClear.addEventListener("click",v);function _(e){return e.map(({id:t,downloads:i,views:r,likes:c,webformatURL:g,tags:n,largeImageURL:s})=>`<li data-id="${t}" class="gallery_item">
+import{c as l}from"./assets/localStorage-f304c935.js";import{S as o}from"./assets/vendor-0fc460d7.js";const a={list:document.querySelector(".favorite_list"),btnClear:document.querySelector(".btn_clear")},m=JSON.parse(localStorage.getItem(l.LS))??[];a.btnClear.addEventListener("click",v);function _(e){return e.map(({id:t,downloads:i,views:r,likes:c,webformatURL:g,tags:n,largeImageURL:s})=>`<li data-id="${t}" class="gallery_item">
         <a class="gallery_link" href="${s}">
           <img class="gallery_img" src="${g}" data-sourse="${s}" alt="${n}" />
         </a>
