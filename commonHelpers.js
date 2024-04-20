@@ -5,25 +5,25 @@ import{c as l}from"./assets/localStorage-f304c935.js";import{S as o}from"./asset
         <ul class="gallery_item_params">
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
-              <use href="../img/sprite.svg#icon-downloads"></use>
+              <use href="./img/sprite.svg#icon-downloads"></use>
             </svg>
             ${i}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
-              <use href="../img/sprite.svg#icon-heart"></use>
+              <use href="./img/sprite.svg#icon-heart"></use>
             </svg>
             ${c}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
-              <use href="../img/sprite.svg#icon-search"></use>
+              <use href="./img/sprite.svg#icon-search"></use>
             </svg>
             ${r}
           </li>
           <li class="gallery_item_params_link current">
            <svg width="40" height="40">
-          <use class="favorite_svg"  href="../img/sprite.svg#icon-basket-delete"></use>
+          <use class="favorite_svg"  href="./img/sprite.svg#icon-basket-delete"></use>
         </svg>
         </li>
           </ul>
