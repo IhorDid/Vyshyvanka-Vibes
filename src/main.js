@@ -159,25 +159,25 @@ function createMarkup(arr) {
         <ul class="gallery_item_params">
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
-              <use href="../img/sprite.svg#icon-downloads"></use>
+              <use href="./img/sprite.svg#icon-downloads"></use>
             </svg>
             ${downloads}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
-              <use href="../img/sprite.svg#icon-heart"></use>
+              <use href="./img/sprite.svg#icon-heart"></use>
             </svg>
             ${likes}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
-              <use href="../img/sprite.svg#icon-search"></use>
+              <use href="./img/sprite.svg#icon-search"></use>
             </svg>
             ${views}
           </li>
           <li class="gallery_item_params_link current">
            <svg width="40" height="40">
-          <use class="favorite_svg"  href="../img/sprite.svg#icon-star-solid"></use>
+          <use class="favorite_svg"  href="./img/sprite.svg#icon-star-solid"></use>
         </svg>
         </li>
           </ul>
