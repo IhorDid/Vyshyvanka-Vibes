@@ -83,7 +83,7 @@ function onStorageLoader() {
   if (arrImg) {
     elements.list.insertAdjacentHTML('beforeend', createMarkup(arrStorage));
   }
-  onFavoriteClick();
+  // onFavoriteClick();
 }
 
 function hideLoader() {
@@ -219,3 +219,48 @@ const id = setInterval(() => {
     bannerEl.style.display = 'none';
   }
 }, 1000);
+
+function createTriangleRow(height, width) {
+  let triangle = '';
+  for (let i = 0; i < height; i++) {
+    let row = '';
+    for (let j = 0; j < width; j++) {
+      if (j === Math.floor(width / 2)) {
+        row += '#';
+      } else {
+        row += '.';
+      }
+    }
+    triangle += row + '\n'; // Додати поточний рядок до змінної 'triangle'
+  }
+  return triangle;
+}
+
+// Приклад використання:
+const triangle = createTriangleRow(7, 11);
+console.log(triangle);
+
+// console.log(createTriangleRow(11));
+// const t = createTriangleRow(11).split('').slice(1, -1).console.log(t);
+
+// function generateTriangle(height) {
+//   let triangle = '';
+//   for (let i = 0; i < height; i++) {
+//     let row = '';
+//     // Додаємо прогалини перед трикутником
+//     for (let j = 0; j < height - i - 1; j++) {
+//       row += '.';
+//     }
+//     // Додаємо символи #
+//     for (let k = 0; k < 2 * i + 1; k++) {
+//       row += '#';
+//     }
+//     // Додаємо рядок до трикутника
+//     triangle += row + '\n';
+//   }
+//   return triangle;
+// }
+
+// const height = 7; // Висота трикутника
+// const triangle = generateTriangle(height);
+// console.log(triangle);
