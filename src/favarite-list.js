@@ -9,7 +9,7 @@ const elements = {
 
 const storageData = JSON.parse(localStorage.getItem(common.LS)) ?? [];
 elements.btnClear.addEventListener('click', onBtnClearClick);
-// elements.list.addEventListener('click', onDeleteClick);
+elements.list.addEventListener('click', onDeleteClick);
 function createMarkup(arr) {
   return arr
     .map(
@@ -62,33 +62,22 @@ function onBtnClearClick(evt) {
   window.location.href = './index.html';
 }
 
-// function onDeleteClick(evt) {
-//   const currentImgs = evt.target.closest('.gallery_item');
-//   const currentId = Number(currentImgs.dataset.id);
-//   const targetClick = evt.target.classList.contains('favorite_svg');
-//   if (!targetClick) {
-//     return;
-//   }
-//   const updateStorage = storageData.filter(obj => obj.id !== currentId);
-//   localStorage.setItem(common.LS, JSON.stringify(updateStorage));
-// const newStorageDate = JSON.parse(localStorage.getItem(common.LS)) ?? [];
-//   elements.list.innerHTML = createMarkup(updateStorage);
-// }
-
-// function onFavoriteClick(evt) {
-//   const currentImgs = evt.target.closest('.gallery_item');
-//   const currentId = Number(currentImgs.dataset.id);
-
-//   if (evt.target.classList.contains('favorite_svg')) {
-// evt.target.classList.toggle('active_svg');
-
-//     const index = arrImg.findIndex(arr => arr.id === currentId);
-//     if (index !== -1) {
-//       arrImg.splice(index, 1);
-//     } else {
-//       const currentImg = dataArr.hits.find(hit => currentId === hit.id);
-//       arrImg.push(currentImg);
-//     }
-//     localStorage.setItem(common.LS, JSON.stringify(arrImg));
-//   }
-// }
+function onDeleteClick(evt) {
+  const currentImgs = evt.target.closest('.gallery_item');
+  console.log(currentImgs);
+  const currentId = Number(currentImgs.dataset.id);
+  // console.log(currentId);
+  if (!currentImgs) {
+    return;
+  }
+  const currentDdelete = evt.target.classList.contains('favorite_svg');
+  if (!currentDdelete) {
+    return;
+  }
+  currentImgs.remove();
+  const selectDelete = storageData.findIndex(({ id }) => id === currentId);
+  if (selectDelete !== -1) {
+    storageData.splice(selectDelete, 1);
+  }
+  localStorage.setItem(common.LS, JSON.stringify(storageData));
+}
