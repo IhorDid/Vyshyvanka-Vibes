@@ -1,25 +1,25 @@
-import{c as l}from"./assets/localStorage-f304c935.js";import{S as o}from"./assets/vendor-0fc460d7.js";const a={list:document.querySelector(".favorite_list"),btnClear:document.querySelector(".btn_clear")},m=JSON.parse(localStorage.getItem(l.LS))??[];a.btnClear.addEventListener("click",v);function _(e){return e.map(({id:t,downloads:i,views:r,likes:c,webformatURL:g,tags:n,largeImageURL:s})=>`<li data-id="${t}" class="gallery_item">
-        <a class="gallery_link" href="${s}">
-          <img class="gallery_img" src="${g}" data-sourse="${s}" alt="${n}" />
+import{c as r}from"./assets/localStorage-f304c935.js";import{S as m}from"./assets/vendor-0fc460d7.js";const n={list:document.querySelector(".favorite_list"),btnClear:document.querySelector(".btn_clear")},l=JSON.parse(localStorage.getItem(r.LS))??[];n.btnClear.addEventListener("click",_);n.list.addEventListener("click",v);function u(t){return t.map(({id:e,downloads:a,views:c,likes:s,webformatURL:i,tags:g,largeImageURL:o})=>`<li data-id="${e}" class="gallery_item">
+        <a class="gallery_link" href="${o}">
+          <img class="gallery_img" src="${i}" data-sourse="${o}" alt="${g}" />
         </a>
         <ul class="gallery_item_params">
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="./img/sprite.svg#icon-downloads"></use>
             </svg>
-            ${i}
+            ${a}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="./img/sprite.svg#icon-heart"></use>
             </svg>
-            ${c}
+            ${s}
           </li>
           <li class="gallery_item_params_link">
             <svg class="gallery_svg" width="24" height="24">
               <use href="./img/sprite.svg#icon-search"></use>
             </svg>
-            ${r}
+            ${c}
           </li>
           <li class="gallery_item_params_link current">
            <svg width="40" height="40">
@@ -29,5 +29,5 @@ import{c as l}from"./assets/localStorage-f304c935.js";import{S as o}from"./asset
           </ul>
           
           </li>
-          `).join("")}a.list.insertAdjacentHTML("beforeend",_(m));const h=new o(".favorite_list a",{captionDelay:250,captionsData:"alt"});h.refresh();function v(e){localStorage.removeItem(l.LS),window.location.href="./index.html"}
+          `).join("")}n.list.insertAdjacentHTML("beforeend",u(l));const d=new m(".favorite_list a",{captionDelay:250,captionsData:"alt"});d.refresh();function _(t){localStorage.removeItem(r.LS),window.location.href="./index.html"}function v(t){const e=t.target.closest(".gallery_item");console.log(e);const a=Number(e.dataset.id);if(!e||!t.target.classList.contains("favorite_svg"))return;e.remove();const s=l.findIndex(({id:i})=>i===a);s!==-1&&l.splice(s,1),localStorage.setItem(r.LS,JSON.stringify(l))}
 //# sourceMappingURL=commonHelpers.js.map
